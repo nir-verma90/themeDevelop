@@ -1,7 +1,8 @@
 <!-- TODO this file has become a mess, refactor it -->
 
 {% if page.bigimg or page.title %}
-<nav class="navbar navbar-expand-sm  top-nav">
+<header>
+	<nav class="navbar navbar-expand-sm  top-nav">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -42,6 +43,7 @@
     </ul>
   </div>
 </nav>
+</header>
 {% else %}
 <div class="intro-header"></div>
 {% endif %}

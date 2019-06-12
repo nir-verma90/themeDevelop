@@ -8,8 +8,8 @@
 #baseurl: ""
 
 # If you are building a GitHub project page then use these settings:
-url: "https://nir-verma90.github.io/themeDevelop/"
-baseurl: "/themeDevelop"
+#url: "https://nir-verma90.github.io/themeDevelop/"
+#baseurl: "/themeDevelop"
 
 # Of course don't forget to change the username and projectname to YOUR username and project
 
@@ -23,20 +23,54 @@ description: A virtual proof that name is awesome!
 
 # List of links in the navigation bar
 navbar-links:
-  About Me: "aboutme"
-  Resources:
-    - Beautiful Jekyll: "http://deanattali.com/beautiful-jekyll/"
-    - Learn markdown: "http://www.markdowntutorial.com/"
-    - GitHub Pages: "https://pages.github.com/"
-  Author's home: "http://deanattali.com"
+  Explore More:
+    - Link 1: "#"
+    - Link 2: "#"
+    - Link 3: "#"
+  Buy 3D Game Assets: "aboutme"
+  Sell: "#"
 
+footer-links:
+  Terms of service: "#"
+  Refund Policy: "#"
+  Privacy Policy: "#"
+  Sitemap: "#"
+
+social-links:
+  1 :
+    name: Facebook
+    class: fa-facebook-f
+    link: #
+  2 :
+    name: LinkedIn
+    class: fa-linkedin-in
+    link: #
+  3 :
+    name: Twitter
+    class: fa-twitter
+    link: #
+  4 :
+    name: Pinterest
+    class: fa-pinterest-p
+    link: #
+  5 :
+    name: Instagram
+    class: fa-instagram
+    link: #
+
+copyright : "© 2019 ZueRich3D - All Rights Reserved."
+newsletter-heading: "Sign Up for our Newsletter"
+newsletter-placeholder: "Subscribe to recieve our news everyday!"
 # Image to show in the navigation bar - image must be a square (width = height)
 # Remove this parameter if you don't want an image in the navbar
 avatar: "/img/avatar-icon.png"
+cart-url: "#"
+register-url: "#"
+login-url: "#"
 
 # If you want to have an image logo in the top-left corner instead of the title text,
 # then specify the following parameter
-# title-img: /path/to/image
+title-img: "/images/logo.png"
 
 # --- Background colour/image options --- #
 
@@ -253,5 +287,9 @@ plugins:
   - jekyll-paginate
   - jekyll-sitemap
 
+# Collections
+collections:
+  - designer
+  - product
 # Beautiful Jekyll / Dean Attali
 # 2fc73a3a967e97599c9763d05e564189

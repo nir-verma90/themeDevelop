@@ -28,9 +28,9 @@
                      <ul class="social-icon">
                        {% for link in site.social-links %}
                            <li>
-                             <a href="#">{{link[forloop.index].name}}</a>
+                             <a href="{{ link[1].link }}"><i class="fab {{ link[1].class }}"></i></a>
                            </li>
-                      {% endfor %}
+                       {% endfor %}
                       </ul>
                    </div>
                </div>

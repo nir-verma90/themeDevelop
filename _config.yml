@@ -37,24 +37,19 @@ footer-links:
   Sitemap: "#"
 
 social-links:
-  1 :
-    name: Facebook
+  - name: Facebook
     class: fa-facebook-f
     link: #
-  2 :
-    name: LinkedIn
+  - name: LinkedIn
     class: fa-linkedin-in
     link: #
-  3 :
-    name: Twitter
+  - name: Twitter
     class: fa-twitter
     link: #
-  4 :
-    name: Pinterest
+  - name: Pinterest
     class: fa-pinterest-p
     link: #
-  5 :
-    name: Instagram
+  - name: Instagram
     class: fa-instagram
     link: #
 
@@ -289,7 +284,14 @@ plugins:
 
 # Collections
 collections:
-  - designer
-  - product
+ designer:
+       output: true
+       permalink: /:collection/:name
+ product:
+       output: true
+       permalink: /:collection/:name
+ category:
+    output: true
+    permalink: /:collection/:name
 # Beautiful Jekyll / Dean Attali
 # 2fc73a3a967e97599c9763d05e564189

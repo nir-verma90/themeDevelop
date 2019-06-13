@@ -7,8 +7,6 @@ price: $00.00
 views: 51
 likes:  21
 comment: 11
-tag:
-  -featured
-  -new
-  -collection
+categories: ['Animals & Pets', 'Cars & Vehicles']
+tag: ['featured', 'new','collection']
 ---

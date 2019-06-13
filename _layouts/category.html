@@ -1,0 +1,33 @@
+---
+layout: inner-page
+---
+
+<section id="category_model" class="category_full">
+            <div class="row">
+              {% assign filtered = site.product | where: "categories","Animals & Pets" %}
+              {% for product in filtered %}
+                        <div class="col product-section">
+                            <div class="model-area">
+                                <div class="model-img">
+                                    <img src="{{ product.image | relative_url }}" alt="car">
+                                </div>
+                                <div class="model-description">
+                                    <p>{{ product.description}}</p>
+                                    <img src="{{ product.author-image | relative_url}}" alt="1">
+                                </div>
+                                <div class="medel-review">
+                                    <p><span class="price">{{ product.price}}</span></p>
+                                    <ul>
+                                        <li><a href="#"><i class="fas fa-eye"></i>{{ product.views}}</a></li>
+                                        <li><a href="#"><i class="fas fa-heart"></i>{{ product.likes}}</a></li>
+                                        <li><a href="#"><i class="fas fa-comment-alt"></i>{{product.comment}}</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                {% endfor %}
+
+               </div>
+
+        </section>

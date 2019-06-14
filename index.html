@@ -39,10 +39,10 @@ top-designer-sub-heading: Upload you 3D Models, Sell and Engage with your peers 
          <a id="tab-A" href="#pane-A" class="nav-link active" data-toggle="tab" role="tab"> New In </a>
      </li>
      <li class="nav-item">
-         <a id="tab-B" href="#pane-B" class="nav-link" data-toggle="tab" role="tab">SPecial</a>
+         <a id="tab-B" href="#pane-B" class="nav-link" data-toggle="tab" role="tab">Collection</a>
      </li>
      <li class="nav-item">
-         <a id="tab-C" href="#pane-C" class="nav-link" data-toggle="tab" role="tab">Collection</a>
+         <a id="tab-C" href="#pane-C" class="nav-link" data-toggle="tab" role="tab">Special</a>
      </li>
      <li class="nav-item">
          <a id="tab-D" href="#pane-D" class="nav-link" data-toggle="tab" role="tab">Featured</a>
@@ -56,8 +56,8 @@ top-designer-sub-heading: Upload you 3D Models, Sell and Engage with your peers 
          <div id="collapse-A" class="collapse show" data-parent="#content" role="tabpanel" aria-labelledby="heading-A">
              <div class="card-body">
                  <div class="row">
-
-                   {% for product in site.product limit:4 %}
+                   {% assign newInProduct = site.product | where: "tags","New In" %}
+                   {% for product in newInProduct limit:4 %}
                    <div class="col-sm-12 col-md-6 col-lg-3 mb-3">
                        <div class="model-area">
                            <div class="model-img">
@@ -80,7 +80,7 @@ top-designer-sub-heading: Upload you 3D Models, Sell and Engage with your peers 
                    {% endfor %}
 
                  </div>
-                 <div class="view-all"><a href="#">View All <i class="fas fa-long-arrow-alt-right"></i></a></div>
+                 <div class="view-all"><a href="{{ '/tags/new' | relative_url }}">View All <i class="fas fa-long-arrow-alt-right"></i></a></div>
              </div>
          </div>
      </div>
@@ -90,7 +90,8 @@ top-designer-sub-heading: Upload you 3D Models, Sell and Engage with your peers 
          <div id="collapse-B" class="collapse" data-parent="#content" role="tabpanel" aria-labelledby="heading-B">
              <div class="card-body">
                  <div class="row">
-                   {% for product in site.product limit:4 %}
+                   {% assign collectionProduct = site.product | where: "tags","Collection" %}
+                   {% for product in collectionProduct limit:4 %}
                    <div class="col-sm-12 col-md-6 col-lg-3 mb-3">
                        <div class="model-area">
                            <div class="model-img">
@@ -113,7 +114,7 @@ top-designer-sub-heading: Upload you 3D Models, Sell and Engage with your peers 
                    {% endfor %}
 
                  </div>
-                 <div class="view-all"><a href="#">View All <i class="fas fa-long-arrow-alt-right"></i></a></div>
+                 <div class="view-all"><a href="{{ '/tags/collection' | relative_url }}">View All <i class="fas fa-long-arrow-alt-right"></i></a></div>
              </div>
          </div>
      </div>
@@ -123,7 +124,8 @@ top-designer-sub-heading: Upload you 3D Models, Sell and Engage with your peers 
          <div id="collapse-C" class="collapse" role="tabpanel" data-parent="#content" aria-labelledby="heading-C">
              <div class="card-body">
                 <div class="row">
-                  {% for product in site.product limit:4 %}
+                  {% assign specialProduct = site.product | where: "tags","Special" %}
+                  {% for product in specialProduct limit:4 %}
                   <div class="col-sm-12 col-md-6 col-lg-3 mb-3">
                       <div class="model-area">
                           <div class="model-img">
@@ -146,7 +148,7 @@ top-designer-sub-heading: Upload you 3D Models, Sell and Engage with your peers 
                   {% endfor %}
 
                  </div>
-                 <div class="view-all"><a href="#">View All <i class="fas fa-long-arrow-alt-right"></i></a></div>
+                 <div class="view-all"><a href="{{ '/tags/special' | relative_url }}">View All <i class="fas fa-long-arrow-alt-right"></i></a></div>
              </div>
          </div>
      </div>
@@ -156,8 +158,8 @@ top-designer-sub-heading: Upload you 3D Models, Sell and Engage with your peers 
          <div id="collapse-D" class="collapse" role="tabpanel" data-parent="#content" aria-labelledby="heading-D">
              <div class="card-body">
                  <div class="row">
-                   {% assign featuredProducts = site.product | where:'featured', product.category %}
-                   {% for product in featuredProducts limit:4 %}
+                   {% assign featuredProduct = site.product | where: "tags","Featured" %}
+                   {% for product in featuredProduct limit:4 %}
                    <div class="col-sm-12 col-md-6 col-lg-3 mb-3">
                        <div class="model-area">
                            <div class="model-img">
@@ -179,7 +181,7 @@ top-designer-sub-heading: Upload you 3D Models, Sell and Engage with your peers 
                    </div>
                    {% endfor %}
                  </div>
-                 <div class="view-all"><a href="#">View All <i class="fas fa-long-arrow-alt-right"></i></a></div>
+                 <div class="view-all"><a href="{{ '/tags/featured' | relative_url }}">View All <i class="fas fa-long-arrow-alt-right"></i></a></div>
              </div>
          </div>
      </div>
@@ -188,35 +190,8 @@ top-designer-sub-heading: Upload you 3D Models, Sell and Engage with your peers 
      </section>
      <!--        accordion section End-->
 <!--        top designer -->
-<section id="testimonial-img">
-     <div class="designer">
-         <div class="container">
-         <h2>{{page.top-designer-heading}}</h2>
-         <p>{{page.top-designer-sub-heading}}</p>
-         <div class="row ">
-           {% for designer in site.designer limit:3 %}
-
-                <div class="col-12 col-md-4 testimonialCol">
-                    <div class="client-img">
-                        <img src="{{designer.image}}">
-                    </div>
-                    <div class="client-intro">
-                        <p class="auther-name"><b>{{designer.name}}</b>  <span>{{designer.role}}</span></p>
-                        <p>Followers: <span>{{designer.follower}}</span> </p>
-                        <p>Modles: <span>{{designer.models}}</span> </p>
-                        <a href="{{ designer.profile-link}}">Learn More <i class="fas fa-long-arrow-alt-right"></i></a>
-                    </div>
-                </div>
-
-              {% endfor %}
-
-
-
-         </div>
-                <div class="view-all"><a href="#">Learn More</a></div>
-         </div>
-     </div>
-</section>
+{% include designer.html %}
+<!-- End Top Designer -->
  <section id="related-pro">
      <div class="related-slider">
          <h2 class="text-center">Best <span>Seller</span></h2>

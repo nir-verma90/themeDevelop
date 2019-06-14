@@ -7,6 +7,6 @@ price: $00.00
 views: 51
 likes:  21
 comment: 11
-categories: ['Animals & Pets', 'Cars & Vehicles']
-tag: ['featured', 'new','collection']
+categories: ['Animals & Pets', 'Cars & Vehicles', 'Characters & Creatures']
+tag: ['New In', 'Special','Collection', 'Featured']
 ---

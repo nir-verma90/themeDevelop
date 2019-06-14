@@ -84,3 +84,56 @@
        });
        });
 </script>
+
+
+{% if page.type %}
+  {% if page.type == 'register' %}
+    <script>
+      $('document').ready(function(){
+        $(".loginInnerPg").addClass("RegisterAddCls");
+        $(".loginInnerPg").removeClass("LoginAddCls");
+        $(".RegFormLg").delay(400).fadeIn();
+        $(".loginFormLg").fadeOut();
+      });
+    </script>
+  {% endif %}
+{% endif %}
+
+
+{% if page.type %}
+  {% if page.type == 'login' %}
+  <script>
+    $('document').ready(function(){
+      $(".loginInnerPg").addClass("LoginAddCls");
+      $(".loginInnerPg").removeClass("RegisterAddCls");
+      $(".RegFormLg").fadeOut();
+      $(".loginFormLg").delay(400).fadeIn();
+    });
+  </script>
+  {% endif %}
+{% endif %}
+
+
+{% if page.type %}
+  {% if page.type == 'auth' %}
+  <script type="text/javascript">
+      $(document).ready(function(){
+          $(".loginBg .regBtn").click(function(){
+              $(".loginInnerPg").addClass("RegisterAddCls");
+              $(".loginInnerPg").removeClass("LoginAddCls");
+              $(".RegFormLg").delay(400).fadeIn();
+              $(".loginFormLg").fadeOut();
+          });
+      });
+
+      $(document).ready(function(){
+          $(".loginBg .logBtn").click(function(){
+              $(".loginInnerPg").addClass("LoginAddCls");
+              $(".loginInnerPg").removeClass("RegisterAddCls");
+              $(".RegFormLg").fadeOut();
+              $(".loginFormLg").delay(400).fadeIn();
+          });
+      });
+  </script>
+  {% endif %}
+{% endif %}

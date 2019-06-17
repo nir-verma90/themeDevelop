@@ -3,19 +3,9 @@ layout: inner-page
 title: Buy 3D Games Assets
 top-designer-heading: Top Designer This Week
 top-designer-sub-heading: Upload you 3D Models, Sell and Engage with your peers to become the top Member of [ZueRich3D](#zuerich) Community.
+search: true
+search-title : Download the 3D Models, Characters & Assets
 ---
-
-
-<section id="login-page">
-      <div class="banner-text category-bg">
-          <h3>Download the 3D Models, Characters & Assets</h3>
-          <div class="search-bar">
-              <input id="search" type="text" class="form-control" name="search" placeholder="Search for 3D Models, Characters and Assets">
-              <button class="btn btn-default"><i class="fas fa-search"></i>
-              </button>
-          </div>
-      </div>
-  </section>
   <section id="category-slider" class="category_full">
 
       <h3>Browse by <span>Category</span></h3>
@@ -51,13 +41,13 @@ top-designer-sub-heading: Upload you 3D Models, Sell and Engage with your peers 
       <ul id="tabs" class="nav nav-tabs" role="tablist">
           <li class="head-nav"><span>Animals & Pets 3D </span>Models</li>
           <li class="nav-item">
-              <a id="tab-A" href="/category/animal-pets" class="nav-link active" data-toggle="tab" role="tab"> View All</a>
+              <a id="tab-A" href="/category/animal-pets" class="nav-link active"> View All</a>
           </li>
       </ul>
       </div>
 
       <div class="row">
-        {% assign animalProduct = site.product | where: "categories","Animals & Pets" %}
+        {% assign animalProduct = site.product | where: "categories", product.category %}
         {% for product in animalProduct limit:4 %}
                   <div class="col">
                       <div class="model-area">
@@ -86,7 +76,7 @@ top-designer-sub-heading: Upload you 3D Models, Sell and Engage with your peers 
       <ul id="tabs" class="nav nav-tabs" role="tablist">
           <li class="head-nav"><span>Characters & Creatures 3D </span>Models</li>
           <li class="nav-item">
-              <a id="tab-A" href="/category/characters-creatures" class="nav-link active" data-toggle="tab" role="tab"> View All</a>
+              <a id="tab-A" href="/category/characters-creatures" class="nav-link active"> View All</a>
           </li>
       </ul>
       </div>
@@ -123,7 +113,7 @@ top-designer-sub-heading: Upload you 3D Models, Sell and Engage with your peers 
       <ul id="tabs" class="nav nav-tabs" role="tablist">
           <li class="head-nav"><span>Weapons & Military 3D </span>Models</li>
           <li class="nav-item">
-              <a id="tab-A" href="/category/electronics-gadgets" class="nav-link active" data-toggle="tab" role="tab"> View All</a>
+              <a id="tab-A" href="/category/electronics-gadgets" class="nav-link active"> View All</a>
           </li>
       </ul>
       </div>

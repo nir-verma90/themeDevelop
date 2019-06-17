@@ -1,7 +1,7 @@
 ---
 title: Register or Login
 layout: inner-page
-register-intro-main-heading : Welcome, ** Back **
+register-intro-main-heading : | Welcome, <span> Back </span>
 register-intro-sub-heading :  To keeep connected with us please login with you personal info.
 register-intro-button-text : Login
 register-heading: Create <span>Account</span>
@@ -10,10 +10,11 @@ register-name-placeholder: Name!
 register-email-placeholder: Email!
 register-password-placeholder: Password!
 register-button-text: Create Account
-login-intro-main-heading: Hello **Friend!**
+login-intro-main-heading: | Hello <span>Friend! </span>
 login-intro-sub-heading: Enter your personal details and start journey with us.
 login-intro-button-text: Register!
-type: ['auth', 'register']
+type: auth
+id: login
 ---
 <div class="loginMain">
     <div class="container">
@@ -31,12 +32,12 @@ type: ['auth', 'register']
                         </div>
                         <div class="LogRegBothFrm">
                             <div class="loginFormLft">
-                                <form>
+                                <form method="post" id="login-form">
                                   <div class="form-group">
-                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email!">
+                                    <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email!">
                                   </div>
                                   <div class="form-group">
-                                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                    <input type="password" class="form-control" name="password" id="exampleInputPassword1" placeholder="Password">
                                   </div>
                                   <div class="logSubmit">
                                       <div class="forgetPass">
@@ -62,15 +63,15 @@ type: ['auth', 'register']
                         </div>
                         <div class="LogRegBothFrm">
                             <div class="loginFormLft">
-                                <form>
+                                <form method="post" id="register-form">
                                   <div class="form-group">
-                                    <input type="text" class="form-control" id="exampleInputName1" aria-describedby="nameHelp" placeholder="Name!">
+                                    <input type="text" class="form-control" name="name" id="exampleInputName1" aria-describedby="nameHelp" placeholder="Name!">
                                   </div>
                                   <div class="form-group">
-                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                                    <input type="email" class="form-control" name="register" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
                                   </div>
                                   <div class="form-group">
-                                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                    <input type="password" class="form-control" name="password" id="exampleInputPassword1" placeholder="Password">
                                   </div>
                                   <div class="logSubmit">
                                       <div class="loginSubmit">

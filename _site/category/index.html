@@ -64,7 +64,7 @@
   
 
    
-  <meta property="og:description" content="Download the 3D Models, Characters &amp; Assets Browse by Category {%for category in site.category %} {{category.title}} {% endfor %} Animals &amp; Pets 3D Models View All {% assign animalProduct = site.product | where: &quot;categories&quot;,&quot;Animals &amp; Pets&quot; %} {% for product in animalProduct limit:4 %} {{ product.description}} {{ product.price}} {{ product.views}}...">
+  <meta property="og:description" content="Browse by Category {%for category in site.category %} {{category.title}} {% endfor %} Animals &amp; Pets 3D Models View All {% assign animalProduct = site.product | where: &quot;categories&quot;, product.category %} {% for product in animalProduct limit:4 %} {{ product.description}} {{ product.price}} {{ product.views}} {{ product.likes}} {{product.comment}} {% endfor %} Characters &amp;...">
   
 
 
@@ -90,7 +90,7 @@
   
 
   
-  <meta name="twitter:description" content="Download the 3D Models, Characters &amp; Assets Browse by Category {%for category in site.category %} {{category.title}} {% endfor %} Animals &amp; Pets 3D Models View All {% assign animalProduct = site.product | where: &quot;categories&quot;,&quot;Animals &amp; Pets&quot; %} {% for product in animalProduct limit:4 %} {{ product.description}} {{ product.price}} {{ product.views}}...">
+  <meta name="twitter:description" content="Browse by Category {%for category in site.category %} {{category.title}} {% endfor %} Animals &amp; Pets 3D Models View All {% assign animalProduct = site.product | where: &quot;categories&quot;, product.category %} {% for product in animalProduct limit:4 %} {{ product.description}} {{ product.price}} {{ product.views}} {{ product.likes}} {{product.comment}} {% endfor %} Characters &amp;...">
   
 
   
@@ -138,7 +138,7 @@
 
 
 
-<a class="nav-link" href="/">Link 1</a>
+<a class="nav-link" href="/category/animal-pets">Animals & Pets</a>
 
                                  
                                
@@ -150,7 +150,7 @@
 
 
 
-<a class="nav-link" href="/">Link 2</a>
+<a class="nav-link" href="/category/cars-vehicles">Cars & Vehicles</a>
 
                                  
                                
@@ -162,7 +162,67 @@
 
 
 
-<a class="nav-link" href="/">Link 3</a>
+<a class="nav-link" href="/category/characters-creatures">Characters & Creatures</a>
+
+                                 
+                               
+                                 
+                                   
+
+
+
+
+
+
+<a class="nav-link" href="/category/electronics-gadgets">Electronics & Gadgets</a>
+
+                                 
+                               
+                                 
+                                   
+
+
+
+
+
+
+<a class="nav-link" href="/category/food-drinks">Food & Drinks</a>
+
+                                 
+                               
+                                 
+                                   
+
+
+
+
+
+
+<a class="nav-link" href="/category/furniture-home">Furniture & Home</a>
+
+                                 
+                               
+                                 
+                                   
+
+
+
+
+
+
+<a class="nav-link" href="/category/music">Music</a>
+
+                                 
+                               
+                                 
+                                   
+
+
+
+
+
+
+<a class="nav-link" href="/category/nature-planets">Nature & Plants</a>
 
                                  
                                
@@ -225,31 +285,43 @@
          </header>
 
 
-<ol class="breadcrumb">
-  <li class="breadcrumb-item">
-    <a href="http://localhost:4000">
-      Home
-    </a>
-  </li>
-  
-  <li class="breadcrumb-item active">
-    <a  href="/category/">
-      Buy 3D Games Assets
-    </a>
-  </li>
-</ol>
 
-  <section id="login-page">
-      <div class="banner-text category-bg">
-          <h3>Download the 3D Models, Characters & Assets</h3>
-          <div class="search-bar">
-              <input id="search" type="text" class="form-control" name="search" placeholder="Search for 3D Models, Characters and Assets">
-              <button class="btn btn-default"><i class="fas fa-search"></i>
-              </button>
-          </div>
-      </div>
-  </section>
-  <section id="category-slider" class="category_full">
+
+<section id="login-page">
+    <div class="banner-text animal-bg">
+        <h3>
+          
+            Download the 3D Models, Characters & Assets
+          
+        </h3>
+        <div class="search-bar">
+            <input id="search" type="text" class="form-control" name="search" placeholder="Search for 3D Models, Characters and Assets">
+            <button class="btn btn-default"><i class="fas fa-search"></i>
+            </button>
+        </div>
+    </div>
+</section>
+
+
+<nav aria-label="breadcrumb" class="breadcrumb">
+  <div class="category_full">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="http://localhost:4000">
+            Home
+          </a>
+        </li>
+        
+        <li class="breadcrumb-item active">
+          <a  href="/category/">
+            Buy 3D Games Assets
+          </a>
+        </li>
+      </ol>
+    </div>
+</nav>
+
+    <section id="category-slider" class="category_full">
 
       <h3>Browse by <span>Category</span></h3>
          <div class="category_inner">
@@ -361,7 +433,7 @@
       <ul id="tabs" class="nav nav-tabs" role="tablist">
           <li class="head-nav"><span>Animals & Pets 3D </span>Models</li>
           <li class="nav-item">
-              <a id="tab-A" href="/category/animal-pets" class="nav-link active" data-toggle="tab" role="tab"> View All</a>
+              <a id="tab-A" href="/category/animal-pets" class="nav-link active"> View All</a>
           </li>
       </ul>
       </div>
@@ -456,7 +528,7 @@
       <ul id="tabs" class="nav nav-tabs" role="tablist">
           <li class="head-nav"><span>Characters & Creatures 3D </span>Models</li>
           <li class="nav-item">
-              <a id="tab-A" href="/category/characters-creatures" class="nav-link active" data-toggle="tab" role="tab"> View All</a>
+              <a id="tab-A" href="/category/characters-creatures" class="nav-link active"> View All</a>
           </li>
       </ul>
       </div>
@@ -553,7 +625,7 @@
       <ul id="tabs" class="nav nav-tabs" role="tablist">
           <li class="head-nav"><span>Weapons & Military 3D </span>Models</li>
           <li class="nav-item">
-              <a id="tab-A" href="/category/electronics-gadgets" class="nav-link active" data-toggle="tab" role="tab"> View All</a>
+              <a id="tab-A" href="/category/electronics-gadgets" class="nav-link active"> View All</a>
           </li>
       </ul>
       </div>
@@ -830,8 +902,30 @@
   
     <script src="https://cdn.jsdelivr.net/jquery.slick/1.4.1/slick.min.js"></script>
   
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
+  
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-auth.js"></script>
+  
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-firestore.js"></script>
+  
 
 
+
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDH2oTOn8bevio6682aIIXqngEf4qLLGh4",
+    authDomain: "zuerich3d-dev.firebaseapp.com",
+    databaseURL: "https://zuerich3d-dev.firebaseio.com",
+    projectId: "zuerich3d-dev",
+    storageBucket: "zuerich3d-dev.appspot.com",
+    messagingSenderId: "501436298903",
+    appId: "1:501436298903:web:6b3521aa7a5cdca9"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
        <script>
            $(document).ready(function () {
            $('.top-nav .dmenu').hover(function () {

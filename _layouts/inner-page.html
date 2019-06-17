@@ -3,5 +3,9 @@ layout: base
 ---
 {% include header.html type="page" %}
 {% include titlebar.html %}
+
+{% if page.search %}
+{% include search.html %}
+{% endif %}
 {% include breadcrumbs.html %}
   {{ content }}

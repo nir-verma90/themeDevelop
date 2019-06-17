@@ -9,4 +9,6 @@ likes:  21
 comment: 11
 categories: ['Animals & Pets', 'Cars & Vehicles', 'Weapons & Military']
 tag: ['New In','Special','Collection','Featured']
+layout: product
+banner: true
 ---

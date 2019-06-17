@@ -140,7 +140,7 @@
 
 
 
-<a class="nav-link" href="/">Link 1</a>
+<a class="nav-link" href="/category/animal-pets">Animals & Pets</a>
 
                                  
                                
@@ -152,7 +152,7 @@
 
 
 
-<a class="nav-link" href="/">Link 2</a>
+<a class="nav-link" href="/category/cars-vehicles">Cars & Vehicles</a>
 
                                  
                                
@@ -164,7 +164,67 @@
 
 
 
-<a class="nav-link" href="/">Link 3</a>
+<a class="nav-link" href="/category/characters-creatures">Characters & Creatures</a>
+
+                                 
+                               
+                                 
+                                   
+
+
+
+
+
+
+<a class="nav-link" href="/category/electronics-gadgets">Electronics & Gadgets</a>
+
+                                 
+                               
+                                 
+                                   
+
+
+
+
+
+
+<a class="nav-link" href="/category/food-drinks">Food & Drinks</a>
+
+                                 
+                               
+                                 
+                                   
+
+
+
+
+
+
+<a class="nav-link" href="/category/furniture-home">Furniture & Home</a>
+
+                                 
+                               
+                                 
+                                   
+
+
+
+
+
+
+<a class="nav-link" href="/category/music">Music</a>
+
+                                 
+                               
+                                 
+                                   
+
+
+
+
+
+
+<a class="nav-link" href="/category/nature-planets">Nature & Plants</a>
 
                                  
                                
@@ -1231,8 +1291,30 @@
   
     <script src="https://cdn.jsdelivr.net/jquery.slick/1.4.1/slick.min.js"></script>
   
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
+  
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-auth.js"></script>
+  
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-firestore.js"></script>
+  
 
 
+
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDH2oTOn8bevio6682aIIXqngEf4qLLGh4",
+    authDomain: "zuerich3d-dev.firebaseapp.com",
+    databaseURL: "https://zuerich3d-dev.firebaseio.com",
+    projectId: "zuerich3d-dev",
+    storageBucket: "zuerich3d-dev.appspot.com",
+    messagingSenderId: "501436298903",
+    appId: "1:501436298903:web:6b3521aa7a5cdca9"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
        <script>
            $(document).ready(function () {
            $('.top-nav .dmenu').hover(function () {

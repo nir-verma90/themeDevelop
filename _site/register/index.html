@@ -64,7 +64,7 @@
   
 
    
-  <meta property="og:description" content="Log in to ZueRoch3D Facebook! Google! Twitter! Or use your email account. Forgot your password? Login Create Account Facebook! Google! Twitter! Or use your email account. Create Account Welcome, Back! To keep connected with us please login with you personal info. Hello, Friend! Enter your personal details and start journey...">
+  <meta property="og:description" content="Log in to ZueRoch3D Facebook! Google! Twitter! {{ page.register-heading-help-text }} Forgot your password? {{ page.register-intro-button-text}} {{page.register-heading}} Facebook! Google! Twitter! {{ page.register-heading-help-text }} {{ page.register-button-text }} Welcome, Back! To keep connected with us please login with you personal info. Hello, Friend! Enter your personal details and start journey with us. Register!Login!...">
   
 
 
@@ -90,7 +90,7 @@
   
 
   
-  <meta name="twitter:description" content="Log in to ZueRoch3D Facebook! Google! Twitter! Or use your email account. Forgot your password? Login Create Account Facebook! Google! Twitter! Or use your email account. Create Account Welcome, Back! To keep connected with us please login with you personal info. Hello, Friend! Enter your personal details and start journey...">
+  <meta name="twitter:description" content="Log in to ZueRoch3D Facebook! Google! Twitter! {{ page.register-heading-help-text }} Forgot your password? {{ page.register-intro-button-text}} {{page.register-heading}} Facebook! Google! Twitter! {{ page.register-heading-help-text }} {{ page.register-button-text }} Welcome, Back! To keep connected with us please login with you personal info. Hello, Friend! Enter your personal details and start journey with us. Register!Login!...">
   
 
   
@@ -138,7 +138,7 @@
 
 
 
-<a class="nav-link" href="/">Link 1</a>
+<a class="nav-link" href="/category/animal-pets">Animals & Pets</a>
 
                                  
                                
@@ -150,7 +150,7 @@
 
 
 
-<a class="nav-link" href="/">Link 2</a>
+<a class="nav-link" href="/category/cars-vehicles">Cars & Vehicles</a>
 
                                  
                                
@@ -162,7 +162,67 @@
 
 
 
-<a class="nav-link" href="/">Link 3</a>
+<a class="nav-link" href="/category/characters-creatures">Characters & Creatures</a>
+
+                                 
+                               
+                                 
+                                   
+
+
+
+
+
+
+<a class="nav-link" href="/category/electronics-gadgets">Electronics & Gadgets</a>
+
+                                 
+                               
+                                 
+                                   
+
+
+
+
+
+
+<a class="nav-link" href="/category/food-drinks">Food & Drinks</a>
+
+                                 
+                               
+                                 
+                                   
+
+
+
+
+
+
+<a class="nav-link" href="/category/furniture-home">Furniture & Home</a>
+
+                                 
+                               
+                                 
+                                   
+
+
+
+
+
+
+<a class="nav-link" href="/category/music">Music</a>
+
+                                 
+                               
+                                 
+                                   
+
+
+
+
+
+
+<a class="nav-link" href="/category/nature-planets">Nature & Plants</a>
 
                                  
                                
@@ -225,19 +285,25 @@
          </header>
 
 
-<ol class="breadcrumb">
-  <li class="breadcrumb-item">
-    <a href="http://localhost:4000">
-      Home
-    </a>
-  </li>
-  
-  <li class="breadcrumb-item active">
-    <a  href="/register/">
-      Register or Login
-    </a>
-  </li>
-</ol>
+
+
+<nav aria-label="breadcrumb" class="breadcrumb">
+  <div class="category_full">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="http://localhost:4000">
+            Home
+          </a>
+        </li>
+        
+        <li class="breadcrumb-item active">
+          <a  href="/register/">
+            Register or Login
+          </a>
+        </li>
+      </ol>
+    </div>
+</nav>
 
   <div class="loginMain">
     <div class="container">
@@ -251,16 +317,16 @@
                                 <a href="#" class="shareGoogle"><i class="fab fa-google"></i> Google!</a>
                                 <a href="#" class="shareTwitter"><i class="fab fa-twitter"></i> Twitter!</a>
                             </div>
-                            <span>Or use your email account.</span>
+                            <span>Or use your email for registration</span>
                         </div>
                         <div class="LogRegBothFrm">
                             <div class="loginFormLft">
-                                <form>
+                                <form method="post" onsubmit="login()">
                                   <div class="form-group">
-                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email!">
+                                    <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email!">
                                   </div>
                                   <div class="form-group">
-                                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                    <input type="password" class="form-control" name="password" id="exampleInputPassword1" placeholder="Password">
                                   </div>
                                   <div class="logSubmit">
                                       <div class="forgetPass">
@@ -275,26 +341,26 @@
                         </div>
                     </div>
                     <div class="cmnFrm RegFormLg">
-                        <h3>Create <span>Account</span></h3>
+                        <h3>Create ** Account **</h3>
                         <div class="shareMainDiv">
                             <div class="shareForm">
                                 <a href="#" class="shareFacebook"><i class="fab fa-facebook-f"></i> Facebook!</a>
                                 <a href="#" class="shareGoogle"><i class="fab fa-google"></i> Google!</a>
                                 <a href="#" class="shareTwitter"><i class="fab fa-twitter"></i> Twitter!</a>
                             </div>
-                            <span>Or use your email account.</span>
+                            <span>Or use your email for registration</span>
                         </div>
                         <div class="LogRegBothFrm">
                             <div class="loginFormLft">
-                                <form>
+                                <form method="post" id="register-form">
                                   <div class="form-group">
-                                    <input type="text" class="form-control" id="exampleInputName1" aria-describedby="nameHelp" placeholder="Name!">
+                                    <input type="text" class="form-control" name="name" id="exampleInputName1" aria-describedby="nameHelp" placeholder="Name!">
                                   </div>
                                   <div class="form-group">
-                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                                    <input type="email" class="form-control" name="register" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
                                   </div>
                                   <div class="form-group">
-                                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                    <input type="password" class="form-control" name="password" id="exampleInputPassword1" placeholder="Password">
                                   </div>
                                   <div class="logSubmit">
                                       <div class="loginSubmit">
@@ -316,7 +382,7 @@
                 <p>Enter your personal details and start journey with us.</p>
             </div>
             <div class="loginBg">
-                <a href="javascript:void()"><span class="regBtn">Register!</span><span class="logBtn">Login!</span></a>
+                <a href="#"><span class="regBtn">Register!</span><span class="logBtn">Login!</span></a>
             </div>
             </div>
         </div>
@@ -444,8 +510,30 @@
   
     <script src="https://cdn.jsdelivr.net/jquery.slick/1.4.1/slick.min.js"></script>
   
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
+  
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-auth.js"></script>
+  
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-firestore.js"></script>
+  
 
 
+
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDH2oTOn8bevio6682aIIXqngEf4qLLGh4",
+    authDomain: "zuerich3d-dev.firebaseapp.com",
+    databaseURL: "https://zuerich3d-dev.firebaseio.com",
+    projectId: "zuerich3d-dev",
+    storageBucket: "zuerich3d-dev.appspot.com",
+    messagingSenderId: "501436298903",
+    appId: "1:501436298903:web:6b3521aa7a5cdca9"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
        <script>
            $(document).ready(function () {
            $('.top-nav .dmenu').hover(function () {
@@ -509,6 +597,15 @@
 
 
   
+    <script>
+      $('document').ready(function(){
+        $(".loginInnerPg").addClass("RegisterAddCls");
+        $(".loginInnerPg").removeClass("LoginAddCls");
+        $(".RegFormLg").delay(400).fadeIn();
+        $(".loginFormLg").fadeOut();
+      });
+    </script>
+  
 
 
 
@@ -516,6 +613,75 @@
   
 
 
+
+
+  
+  <script>
+      $('#register-form').submit(function(e){
+        e.preventDefault();
+        alert('register');
+      });
+  </script>
+  <script>
+      $('#login-form').submit(function(e){
+        e.preventDefault();
+        alert('login');
+      });
+  </script>
+
+  <script type="text/javascript">
+      $(document).ready(function(){
+          $(".loginBg .regBtn").click(function(){
+              $(".loginInnerPg").addClass("RegisterAddCls");
+              $(".loginInnerPg").removeClass("LoginAddCls");
+              $(".RegFormLg").delay(400).fadeIn();
+              $(".loginFormLg").fadeOut();
+          });
+      });
+
+      $(document).ready(function(){
+          $(".loginBg .logBtn").click(function(){
+              $(".loginInnerPg").addClass("LoginAddCls");
+              $(".loginInnerPg").removeClass("RegisterAddCls");
+              $(".RegFormLg").fadeOut();
+              $(".loginFormLg").delay(400).fadeIn();
+          });
+      });
+  </script>
+  <script>
+  function createNewUser(email, password, name){
+    firebase.auth().createUserWithEmailAndPassword(email, password)
+        .then(function (firebaseUser) {
+
+          updateRegisterData(email, name, firebaseUser.uid);
+        })
+        .catch(function (error) {
+            var errorCode = error.code;
+            var errorMessage = error.message;
+        });
+  }
+
+
+  function updateRegisterData(email, name, uid){
+    //push data into firestore using the uid provided
+
+    alert('tada');
+
+      var db = firebase.firestore();
+
+      db.collection("users").add({
+          uid: uid,
+          name: name,
+          email: email
+      })
+      .then(function(docRef) {
+          console.log("Document written with ID: ", docRef.id);
+      })
+      .catch(function(error) {
+          console.error("Error adding document: ", error);
+      });
+  }
+  </script>
 
 
   

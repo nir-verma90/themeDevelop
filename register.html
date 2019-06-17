@@ -13,7 +13,8 @@ register-button-text: Create Account
 login-intro-main-heading: Hello **Friend!**
 login-intro-sub-heading: Enter your personal details and start journey with us.
 login-intro-button-text: Register!
-type: ['auth', 'register']
+type: auth
+id: register
 ---
 
 <div class="loginMain">
@@ -28,23 +29,23 @@ type: ['auth', 'register']
                                 <a href="#" class="shareGoogle"><i class="fab fa-google"></i> Google!</a>
                                 <a href="#" class="shareTwitter"><i class="fab fa-twitter"></i> Twitter!</a>
                             </div>
-                            <span>Or use your email account.</span>
+                            <span>{{ page.register-heading-help-text }}</span>
                         </div>
                         <div class="LogRegBothFrm">
                             <div class="loginFormLft">
-                                <form>
+                                <form method="post" onsubmit="login()">
                                   <div class="form-group">
-                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email!">
+                                    <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email!">
                                   </div>
                                   <div class="form-group">
-                                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                    <input type="password" class="form-control" name="password" id="exampleInputPassword1" placeholder="Password">
                                   </div>
                                   <div class="logSubmit">
                                       <div class="forgetPass">
                                           <a href="#">Forgot your password?</a>
                                       </div>
                                       <div class="loginSubmit">
-                                         <button type="submit" class="btn btn-primary">Login</button>
+                                         <button type="submit" class="btn btn-primary">{{ page.register-intro-button-text}}</button>
                                       </div>
                                   </div>
                                 </form>
@@ -52,30 +53,30 @@ type: ['auth', 'register']
                         </div>
                     </div>
                     <div class="cmnFrm RegFormLg">
-                        <h3>Create <span>Account</span></h3>
+                        <h3>{{page.register-heading}}</h3>
                         <div class="shareMainDiv">
                             <div class="shareForm">
                                 <a href="#" class="shareFacebook"><i class="fab fa-facebook-f"></i> Facebook!</a>
                                 <a href="#" class="shareGoogle"><i class="fab fa-google"></i> Google!</a>
                                 <a href="#" class="shareTwitter"><i class="fab fa-twitter"></i> Twitter!</a>
                             </div>
-                            <span>Or use your email account.</span>
+                            <span>{{ page.register-heading-help-text }}</span>
                         </div>
                         <div class="LogRegBothFrm">
                             <div class="loginFormLft">
-                                <form>
+                                <form method="post" id="register-form">
                                   <div class="form-group">
-                                    <input type="text" class="form-control" id="exampleInputName1" aria-describedby="nameHelp" placeholder="Name!">
+                                    <input type="text" class="form-control" name="name" id="exampleInputName1" aria-describedby="nameHelp" placeholder="Name!">
                                   </div>
                                   <div class="form-group">
-                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                                    <input type="email" class="form-control" name="register" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
                                   </div>
                                   <div class="form-group">
-                                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                    <input type="password" class="form-control" name="password" id="exampleInputPassword1" placeholder="Password">
                                   </div>
                                   <div class="logSubmit">
                                       <div class="loginSubmit">
-                                         <button type="submit" class="btn btn-primary">Create Account</button>
+                                         <button type="submit" class="btn btn-primary">{{ page.register-button-text }}</button>
                                       </div>
                                   </div>
                                 </form>
@@ -93,7 +94,7 @@ type: ['auth', 'register']
                 <p>Enter your personal details and start journey with us.</p>
             </div>
             <div class="loginBg">
-                <a href="javascript:void()"><span class="regBtn">Register!</span><span class="logBtn">Login!</span></a>
+                <a href="#"><span class="regBtn">Register!</span><span class="logBtn">Login!</span></a>
             </div>
             </div>
         </div>

@@ -25,6 +25,22 @@
   {% endfor %}
 {% endif %}
 
+
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDH2oTOn8bevio6682aIIXqngEf4qLLGh4",
+    authDomain: "zuerich3d-dev.firebaseapp.com",
+    databaseURL: "https://zuerich3d-dev.firebaseio.com",
+    projectId: "zuerich3d-dev",
+    storageBucket: "zuerich3d-dev.appspot.com",
+    messagingSenderId: "501436298903",
+    appId: "1:501436298903:web:6b3521aa7a5cdca9"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
        <script>
            $(document).ready(function () {
            $('.top-nav .dmenu').hover(function () {
@@ -86,8 +102,8 @@
 </script>
 
 
-{% if page.type %}
-  {% if page.type == 'register' %}
+{% if page.id %}
+  {% if page.id == 'register' %}
     <script>
       $('document').ready(function(){
         $(".loginInnerPg").addClass("RegisterAddCls");
@@ -100,8 +116,8 @@
 {% endif %}
 
 
-{% if page.type %}
-  {% if page.type == 'login' %}
+{% if page.id %}
+  {% if page.id == 'login' %}
   <script>
     $('document').ready(function(){
       $(".loginInnerPg").addClass("LoginAddCls");
@@ -116,6 +132,19 @@
 
 {% if page.type %}
   {% if page.type == 'auth' %}
+  <script>
+      $('#register-form').submit(function(e){
+        e.preventDefault();
+        alert('register');
+      });
+  </script>
+  <script>
+      $('#login-form').submit(function(e){
+        e.preventDefault();
+        alert('login');
+      });
+  </script>
+
   <script type="text/javascript">
       $(document).ready(function(){
           $(".loginBg .regBtn").click(function(){
@@ -135,5 +164,41 @@
           });
       });
   </script>
+  <script>
+  function createNewUser(email, password, name){
+    firebase.auth().createUserWithEmailAndPassword(email, password)
+        .then(function (firebaseUser) {
+
+          updateRegisterData(email, name, firebaseUser.uid);
+        })
+        .catch(function (error) {
+            var errorCode = error.code;
+            var errorMessage = error.message;
+        });
+  }
+
+
+  function updateRegisterData(email, name, uid){
+    //push data into firestore using the uid provided
+
+    alert('tada');
+
+      var db = firebase.firestore();
+
+      db.collection("users").add({
+          uid: uid,
+          name: name,
+          email: email
+      })
+      .then(function(docRef) {
+          console.log("Document written with ID: ", docRef.id);
+      })
+      .catch(function(error) {
+          console.error("Error adding document: ", error);
+      });
+  }
+  </script>
+
+
   {% endif %}
 {% endif %}

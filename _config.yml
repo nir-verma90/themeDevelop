@@ -24,9 +24,14 @@ description: A virtual proof that name is awesome!
 # List of links in the navigation bar
 navbar-links:
   Explore More:
-    - Link 1: "#"
-    - Link 2: "#"
-    - Link 3: "#"
+    - Animals & Pets : "/category/animal-pets"
+    - Cars & Vehicles : "/category/cars-vehicles"
+    - Characters & Creatures : "/category/characters-creatures"
+    - Electronics & Gadgets  : "/category/electronics-gadgets"
+    - Food & Drinks  : "/category/food-drinks"
+    - Furniture & Home  : "/category/furniture-home"
+    - Music  : "/category/music"
+    - Nature & Plants : "/category/nature-planets"
   Buy 3D Game Assets: "/category"
   Sell: "#"
 

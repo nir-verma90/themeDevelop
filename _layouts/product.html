@@ -9,68 +9,74 @@ layout: inner-page
                     <div class=" main-pro-deatial">
                     <div class="model-area">
                             <div class="model-img">
-                                <img src="{{ 'images/product-img.png'  | relative_url}}" alt="car">
+                                <img src="{{ page.image | relative_url}}" alt="car">
                             </div>
                             <div class="medel-review">
-                                  <img src="{{ 'images/auther.png' | relative_url}}" alt="1">
-                                <p>Animator name or animation company name  | <a href="#" class="folow"> Follow!</a>+ Add To      </> Embed</p>
+                                <img src="{{ page.animator-pic | relative_url}}" alt="1">
+                                <p>{{page.animator-discription}} | <a href="#" class="folow"> Follow!</a>+ Add To </> Embed</p>
                                 <ul>
-                                    <li><a href="#"><i class="fas fa-eye"></i>51</a></li>
-                                    <li><a href="#"><i class="fas fa-heart"></i>21</a></li>
-                                    <li><a href="#"><i class="fas fa-comment-alt"></i>11</a></li>
+                                    <li><a href="#"><i class="fas fa-eye"></i>{{page.views}}</a></li>
+                                    <li><a href="#"><i class="fas fa-heart"></i>{{page.likes}}</a></li>
+                                    <li><a href="#"><i class="fas fa-comment-alt"></i>{{page.comment}}</a></li>
                                 </ul>
                             </div>
                         </div>
 
                     </div>
                     <div class=event_time>
-                        <p>
-                            <button class="btn btn-default">Wolf</button>
-                            <button class="btn btn-default">Faceted</button>
-                            <button class="btn btn-default">Polyart</button>
-                            <button class="btn btn-default">Animated</button>
-                            <button class="btn btn-default">Lowpoly</button>
-
-                           Published 2 year ago</p>
+                        
+                        <p>{% for keywords in page.keywords%}
+                            <button class="btn btn-default">{{keywords}}</button>
+                            {% endfor %}
+                            Published {{page.published | date_to_string }}</p>
+                        
                 </div>
                 </div>
                  <div class="col-md-3 col-sm-12">
                      <div class="price_atc">
-                         <h2>Poly Art Wolf</h2>
+                         <h2>{{page.title}}</h2>
                          <div class="sapce_review">
-                         <div class="inner_price"><p><span class="price">$20.00</span></p>
+                         <div class="inner_price"><p><span class="price">{{page.price}}</span></p>
                          <p>Included Taxes & Checkup</p>
                          </div>
                          <div class="inner_price review_sec">
-                         <p><span class="review_star">
-                             <a href="#"><i class="fas fa-star"></i></a>
-                              <a href="#"><i class="fas fa-star"></i></a>
-                              <a href="#"><i class="fas fa-star"></i></a>
-                              <a href="#"><i class="fas fa-star"></i></a>
-                              <a href="#"><i class="fas fa-star"></i></a>
-                             </span>
-                             </p>
-                             <p>
-                             0 Review . <span class="add_review"> <a href="#">  Add Review</a></span>
-                         </p>
+                                <p>
+                                    <span class="review_star">
+                                      <a href="#"><i class="fas fa-star"></i></a>
+                                      <a href="#"><i class="fas fa-star"></i></a>
+                                      <a href="#"><i class="fas fa-star"></i></a>
+                                      <a href="#"><i class="fas fa-star"></i></a>
+                                      <a href="#"><i class="fas fa-star"></i></a>
+                                    </span>
+                                </p>
+                                 <p> 0 Review . <span class="add_review"> <a href="#">  Add Review</a></span> </p>
                          </div>
                          <div class="qty_input">
                              <p>Quantity</p>
-                         <div class="qty_nmbr"><span class="input-number-decrement">–</span><input class="input-number" type="text" value="1" min="0" max="10"><span class="input-number-increment">+</span>
-                             </div>
+                                <div class="qty_nmbr">
+                                    <span class="input-number-decrement">
+                                        <button type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus" data-field="quant[1]"> - </button>
+                                    </span>
+                                        <input type="text" name="quant[1]" class="form-control input-number" value="1" min="1" max="10">
+                                    <span class="input-number-increment">
+                                        <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[1]"> + </button>
+                                    </span>
+                                </div>
                          </div>
+
+
+
+
                          <div class="buy_btns">
                              <button class="btn btn-default add_now"><img src="{{'images/atc-cart.png' | relative_url}}">Add to Cart</button>
                              <button class="btn btn-default buy_now">Buy now with<img src="{{'images/pay-pal.png' | relative_url}}"></button>
                          </div>
                              <div class="inner_social">
                         <ul>
-                            <li><a class="facebook" href="#"><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a class="insta" href="#"><i class="fab fa-instagram"></i></a></li>
-                            <li><a class="twiter" href="#"><i class="fab fa-twitter"></i></a></li>
-                            <li><a class="linkdin" href="#"><i class="fab fa-linkedin-in"></i></a></li>
-
-
+                            <li><a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u={{site.url}}{{page.url}}"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a class="insta" href="#"></i></a></li>
+                            <li><a class="twiter" href="https://twitter.com/home?status={{site.url}}{{page.url}}"><i class="fab fa-twitter"></i></a></li>
+                            <li><a class="linkdin" href="https://www.linkedin.com/shareArticle?mini=true&url={{site.url}}{{page.url}}"><i class="fab fa-linkedin-in"></i></a></li>
                         </ul>
 
                          </div>
@@ -83,54 +89,31 @@ layout: inner-page
 
 
             </div>
-               <div class="description_tab">
-              <nav>
-                <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
-                  <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Discriptions</a>
-                  <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Comment</a>
-                  <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Review! </a>
-                  <a class="nav-item nav-link" id="nav-about-tab" data-toggle="tab" href="#nav-about" role="tab" aria-controls="nav-about" aria-selected="false">Inspect the 3D Model</a>
-                </div>
-              </nav>
-              <div class="tab-content" id="nav-tabContent">
-                <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                        Section 1.10.32 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC</p>
-                    <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
-                        1914 translation by H. Rackham</p>
-                    <p>"But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?"</p>
-                </div>
-                <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                 <p>"But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?"</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                        Section 1.10.32 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC</p>
-                    <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
-                        1914 translation by H. Rackham</p>
-                      Et et consectetur ipsum labore excepteur est proident excepteur ad velit occaecat qui minim occaecat veniam. Fugiat veniam incididunt anim aliqua enim pariatur veniam sunt est aute sit dolor anim. Velit non irure adipisicing aliqua ullamco irure incididunt irure non esse consectetur nostrud minim non minim occaecat. Amet duis do nisi duis veniam non est eiusmod tempor incididunt tempor dolor ipsum in qui sit. Exercitation mollit sit culpa nisi culpa non adipisicing reprehenderit do dolore. Duis reprehenderit occaecat anim ullamco ad duis occaecat ex.
-                </div>
-                <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                        Section 1.10.32 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC</p>
-                    <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
-                        1914 translation by H. Rackham</p>
-                    <p>"But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?"</p>
-                </div>
-                <div class="tab-pane fade" id="nav-about" role="tabpanel" aria-labelledby="nav-about-tab">
-
-                   <p>"But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?"</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                        Section 1.10.32 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC</p>
-                    <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
-                        1914 translation by H. Rackham</p>
-                </div>
-              </div>
-    </div>
-
-
-
-
+            <div class="description_tab">
+                  <nav>
+                    <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+                      <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Discriptions</a>
+                      <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Comment</a>
+                      <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Review! </a>
+                      <a class="nav-item nav-link" id="nav-about-tab" data-toggle="tab" href="#nav-about" role="tab" aria-controls="nav-about" aria-selected="false">Inspect the 3D Model</a>
+                    </div>
+                  </nav>
+                  <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                        <p>{{ page.tab-discription }}</p>
+                    </div>
+                    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                        <p>{{page.tab-comment}}</p>
+                    </div>
+                    <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                        <p>{{page.tab-review}}</p>
+                    </div>
+                    <div class="tab-pane fade" id="nav-about" role="tabpanel" aria-labelledby="nav-about-tab">
+                       <p>{{page.tab-model}}</p>
+                    </div>
+                  </div>
+            </div>
         </div>
-
     </section>
 
    <section id="category_models" class="product-related category_full">

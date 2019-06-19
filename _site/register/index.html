@@ -64,7 +64,90 @@
   
 
    
-  <meta property="og:description" content="Log in to ZueRoch3D Facebook! Google! Twitter! {{ page.register-heading-help-text }} Forgot your password? {{ page.register-intro-button-text}} {{page.register-heading}} Facebook! Google! Twitter! {{ page.register-heading-help-text }} {{ page.register-button-text }} Welcome, Back! To keep connected with us please login with you personal info. Hello, Friend! Enter your personal details and start journey with us. Register!Login!...">
+  <meta property="og:description" content="
+    
+        
+            
+                    
+                        Log in to ZueRoch3D
+                        
+                            
+                                 Facebook!
+                                 Google!
+                                 Twitter!
+                            
+                            {{ page.register-heading-help-text }}
+                        
+                        
+                            
+                                
+                                  
+                                    
+                                  
+                                  
+                                    
+                                  
+                                  
+                                      
+                                          Forgot your password?
+                                      
+                                      
+                                         {{ page.register-intro-button-text}}
+                                      
+                                  
+                                
+                            
+                        
+                    
+                    
+                        {{page.register-heading}}
+                        
+                            
+                                 Facebook!
+                                 Google!
+                                 Twitter!
+                            
+                            {{ page.register-heading-help-text }}
+                        
+                        
+                            
+                                
+                                  
+                                    
+                                  
+                                  
+                                    
+                                  
+                                  
+                                    
+                                  
+                                  
+                                      
+                                         {{ page.register-button-text }}
+                                      
+                                  
+                                
+                            
+                        
+                    
+            
+            
+            
+                {{ page.register-intro-main-heading }}
+                {{ page.register-intro-sub-heading }}
+            
+            
+                {{ page.login-intro-main-heading }}
+                {{ page.login-intro-sub-heading }}
+            
+            
+                Register!Login!
+            
+            
+        
+    
+
+">
   
 
 
@@ -90,7 +173,90 @@
   
 
   
-  <meta name="twitter:description" content="Log in to ZueRoch3D Facebook! Google! Twitter! {{ page.register-heading-help-text }} Forgot your password? {{ page.register-intro-button-text}} {{page.register-heading}} Facebook! Google! Twitter! {{ page.register-heading-help-text }} {{ page.register-button-text }} Welcome, Back! To keep connected with us please login with you personal info. Hello, Friend! Enter your personal details and start journey with us. Register!Login!...">
+  <meta name="twitter:description" content="
+    
+        
+            
+                    
+                        Log in to ZueRoch3D
+                        
+                            
+                                 Facebook!
+                                 Google!
+                                 Twitter!
+                            
+                            {{ page.register-heading-help-text }}
+                        
+                        
+                            
+                                
+                                  
+                                    
+                                  
+                                  
+                                    
+                                  
+                                  
+                                      
+                                          Forgot your password?
+                                      
+                                      
+                                         {{ page.register-intro-button-text}}
+                                      
+                                  
+                                
+                            
+                        
+                    
+                    
+                        {{page.register-heading}}
+                        
+                            
+                                 Facebook!
+                                 Google!
+                                 Twitter!
+                            
+                            {{ page.register-heading-help-text }}
+                        
+                        
+                            
+                                
+                                  
+                                    
+                                  
+                                  
+                                    
+                                  
+                                  
+                                    
+                                  
+                                  
+                                      
+                                         {{ page.register-button-text }}
+                                      
+                                  
+                                
+                            
+                        
+                    
+            
+            
+            
+                {{ page.register-intro-main-heading }}
+                {{ page.register-intro-sub-heading }}
+            
+            
+                {{ page.login-intro-main-heading }}
+                {{ page.login-intro-sub-heading }}
+            
+            
+                Register!Login!
+            
+            
+        
+    
+
+">
   
 
   
@@ -269,16 +435,25 @@
                 <div class="col headerRightSec">
 
                              <ul class="navbar-nav">
-                                  <li class="nav-item cart-icn">
-                                      <a class="nav-link" href="/cart"><img src="/images/cart.png"><span>0</span></a>
-                                 </li>
-                                 <li class="nav-item headerRightSecReg">
-                                <a class="nav-link" href="/register">Register</a>
-                              </li>
+                                <li class="nav-item cart-icn">
+                                  <a class="nav-link" href="/cart"><img src="/images/cart.png"><span>0</span></a>
+                                </li>
+                                 <li class="nav-item headerRightSecReg" id="registerNav">
+                                   <a class="nav-link" href="/register">Register</a>
+                                </li>
 
-                            <li class="nav-item login-btn">
-                                <a class="nav-link" href="/login"><i class="fas fa-user"></i>Log In</a>
-                              </li>
+                                  <li class="nav-item login-btn" id="loginNav">
+                                    <a class="nav-link" href="/login"><i class="fas fa-user"></i>Log In</a>
+                                  </li>
+
+
+                                <li class="nav-item headerRightSecReg" id="accountNav" style="display:none">
+                                    <a class="nav-link" href="#">Anonymous</a>
+                                 </li>
+
+                                <li class="nav-item login-btn" id="logOutNav" style="display:none">
+                                     <a class="nav-link" href="/login"><i class="fas fa-user"></i>Log Out</a>
+                                </li>
                             </ul>
                 </div>
             </div>
@@ -286,6 +461,13 @@
 
 
 
+
+
+
+
+<div class="play_art animal-bg">
+                <h3>Register or Login</h3>    
+</div>
 
 <nav aria-label="breadcrumb" class="breadcrumb">
   <div class="category_full">
@@ -321,19 +503,19 @@
                         </div>
                         <div class="LogRegBothFrm">
                             <div class="loginFormLft">
-                                <form method="post" onsubmit="login()">
+                                <form method="post" id="login-form">
                                   <div class="form-group">
-                                    <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email!">
+                                    <input type="email" class="form-control" name="email" id="zuerichLoginEmail" aria-describedby="emailHelp" placeholder="Email!">
                                   </div>
                                   <div class="form-group">
-                                    <input type="password" class="form-control" name="password" id="exampleInputPassword1" placeholder="Password">
+                                    <input type="password" class="form-control" name="password" id="zuerichLoginPassword" placeholder="Password">
                                   </div>
                                   <div class="logSubmit">
                                       <div class="forgetPass">
                                           <a href="#">Forgot your password?</a>
                                       </div>
                                       <div class="loginSubmit">
-                                         <button type="submit" class="btn btn-primary">Login</button>
+                                         <button type="submit" id="loginButton" class="btn btn-primary">Login</button>
                                       </div>
                                   </div>
                                 </form>
@@ -341,7 +523,8 @@
                         </div>
                     </div>
                     <div class="cmnFrm RegFormLg">
-                        <h3>Create ** Account **</h3>
+                        <h3>Create <span> Account </span>
+</h3>
                         <div class="shareMainDiv">
                             <div class="shareForm">
                                 <a href="#" class="shareFacebook"><i class="fab fa-facebook-f"></i> Facebook!</a>
@@ -354,17 +537,17 @@
                             <div class="loginFormLft">
                                 <form method="post" id="register-form">
                                   <div class="form-group">
-                                    <input type="text" class="form-control" name="name" id="exampleInputName1" aria-describedby="nameHelp" placeholder="Name!">
+                                    <input type="text" class="form-control" name="name" id="zuerichRegisterName" aria-describedby="nameHelp" placeholder="Name!">
                                   </div>
                                   <div class="form-group">
-                                    <input type="email" class="form-control" name="register" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                                    <input type="email" class="form-control" name="register" id="zuerichRegisterEmail" aria-describedby="emailHelp" placeholder="Enter email">
                                   </div>
                                   <div class="form-group">
-                                    <input type="password" class="form-control" name="password" id="exampleInputPassword1" placeholder="Password">
+                                    <input type="password" class="form-control" name="password" id="zuerichRegisterPassword" placeholder="Password">
                                   </div>
                                   <div class="logSubmit">
                                       <div class="loginSubmit">
-                                         <button type="submit" class="btn btn-primary">Create Account</button>
+                                         <button type="submit" id="registerButton" class="btn btn-primary">Create Account</button>
                                       </div>
                                   </div>
                                 </form>
@@ -374,11 +557,13 @@
             </div>
             <div class="mainContentDiv">
             <div class="FormMnContent logCntnt">
-                <h3>Welcome, <span>Back!</span></h3>
+                <h3>Welcome, <span> Back </span>
+</h3>
                 <p>To keep connected with us please login with you personal info.</p>
             </div>
             <div class="FormMnContent RegCntnt">
-                <h3>Hello, <span>Friend!</span></h3>
+                <h3>Hello <span>Friend!</span>
+</h3>
                 <p>Enter your personal details and start journey with us.</p>
             </div>
             <div class="loginBg">
@@ -534,6 +719,52 @@
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
 </script>
+
+<script>
+
+$(document).ready(function(){
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      loggedInUserChange(user);
+    } else {
+      loggedOutUserChange();
+    }
+  });
+
+
+
+  $('#logOutNav').click(function(){
+      firebase.auth().signOut();
+      window.location.href = "/login";
+  });
+
+});
+
+
+function loggedInUserChange(user){
+  $('#accountNav').find('a').text(user.displayName);
+  $('#accountNav').show();
+  $('#logOutNav').show();
+  $('#registerNav').hide();
+  $('#loginNav').hide();
+
+
+
+}
+
+
+function loggedOutUserChange(){
+  $('#accountNav').hide();
+  $('#logOutNav').hide();
+  $('#registerNav').show();
+  $('#loginNav').show();
+}
+
+
+
+
+
+</script>
        <script>
            $(document).ready(function () {
            $('.top-nav .dmenu').hover(function () {
@@ -617,15 +848,24 @@
 
   
   <script>
+    $(document).ready(function(){
+      firebase.auth().onAuthStateChanged(function(user) {
+          if (user) {
+            window.location.href = "http://localhost:4000";
+          }
+      });
+    });
+  </script>
+  <script>
       $('#register-form').submit(function(e){
         e.preventDefault();
-        alert('register');
+          createNewUser()
       });
   </script>
   <script>
       $('#login-form').submit(function(e){
         e.preventDefault();
-        alert('login');
+        toggleSignIn();
       });
   </script>
 
@@ -649,37 +889,103 @@
       });
   </script>
   <script>
-  function createNewUser(email, password, name){
-    firebase.auth().createUserWithEmailAndPassword(email, password)
-        .then(function (firebaseUser) {
+  function createNewUser(){
+    var name = document.getElementById('zuerichRegisterName').value;
+    var email = document.getElementById('zuerichRegisterEmail').value;
+    var password = document.getElementById('zuerichRegisterPassword').value;
+     if (email.length < 4) {
+       alert('Please enter an email address.');
+       return;
+     }
+     if (password.length < 4) {
+       alert('Please enter a password.');
+       return;
+     }
+     // Sign in with email and pass.
+     // [START createwithemail]
+     firebase.auth().createUserWithEmailAndPassword(email, password).then(function(){
+          // callSomeFunction(); Optional
+          var user = firebase.auth().currentUser;
+          user.updateProfile({
+              displayName: name
+          }).then(function() {
+              // Update successful.
+          }, function(error) {
+              // An error happened.
+          });
 
-          updateRegisterData(email, name, firebaseUser.uid);
-        })
-        .catch(function (error) {
-            var errorCode = error.code;
-            var errorMessage = error.message;
-        });
+
+
+    var db = firebase.firestore();
+
+
+    db.collection("users").add({
+  uid: firebase.auth().currentUser.uid,
+  name: name,
+  email: firebase.auth().currentUser.email
+})
+.then(function(docRef) {
+  console.log("Document written with ID: ", docRef.id);
+  window.location.href = "http://localhost:4000";
+})
+.catch(function(error) {
+  console.error("Error adding document: ", error);
+});
+
+     }).catch(function(error) {
+       // Handle Errors here.
+       var errorCode = error.code;
+       var errorMessage = error.message;
+       // [START_EXCLUDE]
+       if (errorCode == 'auth/weak-password') {
+         alert('The password is too weak.');
+       } else {
+         alert(errorMessage);
+       }
+       console.log(error);
+       // [END_EXCLUDE]
+     });
+     // [END createwithemail]
   }
 
 
-  function updateRegisterData(email, name, uid){
-    //push data into firestore using the uid provided
-
-    alert('tada');
-
-      var db = firebase.firestore();
-
-      db.collection("users").add({
-          uid: uid,
-          name: name,
-          email: email
-      })
-      .then(function(docRef) {
-          console.log("Document written with ID: ", docRef.id);
-      })
-      .catch(function(error) {
-          console.error("Error adding document: ", error);
+  function toggleSignIn() {
+    if (firebase.auth().currentUser) {
+      // [START signout]
+      firebase.auth().signOut();
+      // [END signout]
+    } else {
+      var email = document.getElementById('zuerichLoginEmail').value;
+      var password = document.getElementById('zuerichLoginPassword').value;
+      if (email.length < 4) {
+        alert('Please enter an email address.');
+        return;
+      }
+      if (password.length < 4) {
+        alert('Please enter a password.');
+        return;
+      }
+      // Sign in with email and pass.
+      // [START authwithemail]
+      firebase.auth().signInWithEmailAndPassword(email, password).then(function(){
+        window.location.href = "/login";
+      }).catch(function(error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // [START_EXCLUDE]
+        if (errorCode === 'auth/wrong-password') {
+          alert('Wrong password.');
+        } else {
+          alert(errorMessage);
+        }
+        console.log(error);
+        document.getElementById('loginButton').disabled = false;
+        // [END_EXCLUDE]
       });
+      // [END authwithemail]
+    }
+    document.getElementById('loginButton').disabled = true;
   }
   </script>
 
